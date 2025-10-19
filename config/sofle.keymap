@@ -17,6 +17,20 @@
 
     conditional_layers { compatible = "zmk,conditional-layers"; };
 
+    combos {
+        compatible = "zmk,combos";
+
+        combo_minus {
+            bindings = <&kp MINUS>;
+            key-positions = <28 31>;
+        };
+
+        combo_backtick {
+            bindings = <&kp GRAVE>;
+            key-positions = <27 32>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -38,7 +52,7 @@
 
             sensor-bindings =
                 <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>,
-                <&inc_dec_kp PAGE_UP PAGE_DOWN>;
+                <&inc_dec_kp LEFT_ARROW RIGHT_ARROW>;
         };
 
         lower_layer {
@@ -59,8 +73,8 @@
             >;
 
             sensor-bindings =
-                <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>,
-                <&inc_dec_kp C_BRIGHTNESS_DEC C_BRIGHTNESS_INC>;
+                <&inc_dec_kp C_BRI_DN C_BRI_UP>,
+                <&inc_dec_kp UP_ARROW DOWN_ARROW>;
         };
     };
 };
